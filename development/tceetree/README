@@ -1,0 +1,9 @@
+tceetree could be useful for you when:
+
+ - you have the sources of an application written in C language;
+ - you would like to have a graphical representation of the entire or partial
+function call tree.
+
+It relies on cscope (available in plain Slackware) to analyze source files.
+The output it produces is meant to be feed to graphviz, so you'll likely need it
+too.

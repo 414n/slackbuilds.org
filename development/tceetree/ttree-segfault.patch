@@ -1,0 +1,12 @@
+--- a/ttree.c	2014-08-21 19:18:58.000000000 +0200
++++ b/ttree.c	2018-08-26 11:54:25.329975979 +0200
+@@ -157,6 +157,9 @@
+ // find a node with specified function name and file name and return its pointer or NULL if not found
+ ttreenode_t* ttreefindnode(ttree_t *ptree, char *funname, char *filename)
+ {
++	if (funname == NULL)
++		return NULL;
++
+ 	ttreenode_t *pnode;
+ 
+ 	pnode = ptree->firstnode;

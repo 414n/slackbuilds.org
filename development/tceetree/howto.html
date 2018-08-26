@@ -1,0 +1,53 @@
+<p><strong>tceetree</strong> could be useful for you when:</p>
+<ul>
+<li>you have the sources of an application written in C language;</li>
+<li>you would like to have a graphical representation of the entire or partial function call tree.</li>
+</ul>
+<p>If this is what you are looking for, follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li>Install (and compile) <a href="http://cscope.sourceforge.net/">CScope</a>. A compiled Windows executable can be found <a href="http://code.google.com/p/cscope-win32/">here</a>. For a compiled Linux executable search the Web e.g. for a cscope RPM or Debian package.</li>
+<li>Install <a href="http://www.graphviz.org/">Graphviz</a>.</li>
+<li>Go to your sources root directory and do:
+<ul>
+<li>under Windows: **_dir /B /S *.c &gt; cscope.files_** (/B = bare format, no extra info);</li>
+<li>under Linux: **_find . -name '*.c' &gt; cscope.files_**;</li>
+</ul></li>
+</ol>
+<p>that will recurse subdirectories and list all C files in <strong><em>cscope.files</em></strong>.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>execute <strong><em>cscope -b -c -R</em></strong> (build the cross reference only, don't compress it, recurse);</li>
+<li>run tceetree with <strong><em>cscope.out</em></strong> as input (default) to get <strong><em>tceetree.out</em></strong> (DOT language representation of function call tree);</li>
+<li>execute <strong><em>dot -Tpng -O tceetree.out</em></strong> to get a graphical representation of the tree in <strong><em>tceetree.out.png</em></strong>.</li>
+</ol>
+<p>There are a lot of options you can specify when invoking dot to customize the graph, for example:</p>
+<ul>
+<li>you can change output format e.g. to pdf: <em>dot -Tpdf -O tceetree.out</em>;</li>
+<li>you may modify layout from left to right instead of top to bottom: <em>dot -Grankdir=LR -Tpng -O tceetree.out</em>;</li>
+<li>you may modify graph, nodes and edges font: <em>dot -Gfontname=Helvetica -Nfontname=Helvetica -Efontname=Helvetica -Tpng -O tceetree.out</em>;</li>
+<li>see <em>dot.1.pdf</em> and <em>dotguide.pdf</em> within <a href="http://www.graphviz.org/">Graphviz</a> documentation for many other options.</li>
+</ul>
+<p>You may wish to give a try to one of the other tools provided by <a href="http://www.graphviz.org/">Graphviz</a> instead of <em>dot</em> (see <em>dot.1.pdf</em> for a list).</p>
+<p>This is the synopsis of tceetree:</p>
+<p><strong>tceetree [-c &lt;&lt;depth&gt;] [-C &lt;depth&gt;] [-d &lt;file&gt;] [-f] [-F] [-h] [-i &lt;file&gt;] [-o &lt;file&gt;] [-p &lt;function&gt;] [-r &lt;root&gt;] [-s &lt;style&gt;] [-v] [-V] [-x &lt;function&gt;]</strong></p>
+<p>OptionDescription</p>
+<p><strong>-c &lt;depth&gt;</strong> Depth of tree for called functions: default is max. <em>Depth is measured starting from root(s) function(s).</em></p>
+<p><strong>-C &lt;depth&gt;</strong> Depth of tree for calling functions: default is 0. <em>Depth is measured starting from root(s) function(s) in backward direction.</em></p>
+<p><strong>-d &lt;file&gt;</strong> Output a shortened cscope output file: default is no output. The shortened file includes only function information and can be used as input (-i) for following calls to tceetree to increase speed on big projects.</p>
+<p><strong>-f</strong> Print the file name where the call is near to branch.</p>
+<p><strong>-F</strong> Group functions into one cluster for each source file.</p>
+<p><strong>-h</strong> Print help.</p>
+<p><strong>-i &lt;file&gt;</strong> Input cscope output file: default is cscope.out.</p>
+<p><strong>-o &lt;file&gt;</strong> Output file for graphviz: default is tceetree.out.</p>
+<p><strong>-p &lt;function&gt;</strong> Highlight call path till function. <em>Path starts from root(s) till the specified function (only one), in backward or forward direction.</em></p>
+<p><strong>-r &lt;root&gt;</strong> Root function of tree: default is main. This option may occur more than once for multiple roots (max 5).</p>
+<p><strong>-s &lt;style&gt;</strong> Style for highlight call path: 0 = red color (default); 1 = blue color; 2 = green color; 3 = bold; 4 = dashed; 5 = dotted.</p>
+<p><strong>-v</strong> Print version.</p>
+<p><strong>-V</strong> Verbose output (<em>mainly for debugging purposes</em>).</p>
+<p><strong>-x &lt;function&gt;</strong> Function to be excluded from tree. This option may occur more than once for multiple functions (max 20). -x LIBRARY is a special case for excluding all library functions, i.e. not found defined in any file. <em>All the functions, called (calling) directly or indirectly from the excluded one(s) only, will be excluded too.</em></p>
+<p>tceetree can be called with no option at all: default options will be used.</p>
+<p><strong>Examples:</strong></p>
+<p><img src="screen1.jpg" alt="Screenshot #1" /> <img src="screen2.jpg" alt="Screenshot #2" /></p>
+<ul>
+<li>Screenshot #1 was done with <em>tceetree -F -x LIBRARY</em>;</li>
+<li>screenshot #2 was done with <em>tceetree -C max -r gettree -p ttreefindnode</em>.</li>
+</ul>
