@@ -23,8 +23,8 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=vscode
-VERSION=${VERSION:-1.21.1}
-COMMIT=${COMMIT:-79b44aa704ce542d8ca4a3cc44cfca566e7720f1}
+VERSION=${VERSION:-1.35.0}
+COMMIT=${COMMIT:553cfb2c2205db5f15f3ee8395bbd5cf066d357d}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -63,7 +63,17 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-patch -p1 < ${CWD}/product.json.patch
+patch -p1 -i ${CWD}/product.json.patch
+
+# Pass down this option if not on node >=10, or else build will fail because
+# of a gyp error.
+node_ver_major="$(node --version | sed -r 's/v([0-9]+)\..*/\1/g')"
+if [ "$node_ver_major" -lt 10 ]
+then
+	echo "NOTE: enforcing '--build-v8-with-gn=false on node < 10 to avoid gyp error"
+	export npm_config_build_v8_with_gn=false
+fi
+
 yarn
 node --max_old_space_size=2048 ./node_modules/.bin/gulp vscode-linux-${BUILDARCH}
 
@@ -88,9 +98,9 @@ mkdir -p "${PKG}/usr/bin"
 mkdir -p "${PKG}/usr/share/applications"
 install -m644 "${CWD}/${PRGNAM}.desktop" "${PKG}/usr/share/applications/${PRGNAM}.desktop"
 
-# copy vscode icon
+# link  vscode icon
 mkdir -p "${PKG}/usr/share/icons"
-install -m644 "${PKG}/usr/share/code-oss/resources/app/resources/linux/code.png" \
+ln -s "/usr/share/code-oss/resources/app/resources/linux/code.png" \
         "${PKG}/usr/share/icons/${PRGNAM}.png"
 
 # copy license and slackbuild
