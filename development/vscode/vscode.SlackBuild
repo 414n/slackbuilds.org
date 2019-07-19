@@ -23,8 +23,8 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=vscode
-VERSION=${VERSION:-1.35.0}
-COMMIT=${COMMIT:553cfb2c2205db5f15f3ee8395bbd5cf066d357d}
+VERSION=${VERSION:-1.36.1}
+COMMIT=${COMMIT:2213894ea0415ee8c85c5eea0d0ff81ecc191529}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -65,13 +65,15 @@ find -L . \
 
 patch -p1 -i ${CWD}/product.json.patch
 
-# Pass down this option if not on node >=10, or else build will fail because
+# Pass down these options if not on node >=10, or else build will fail because
 # of a gyp error.
 node_ver_major="$(node --version | sed -r 's/v([0-9]+)\..*/\1/g')"
 if [ "$node_ver_major" -lt 10 ]
 then
 	echo "NOTE: enforcing '--build-v8-with-gn=false on node < 10 to avoid gyp error"
 	export npm_config_build_v8_with_gn=false
+	echo "NOTE: enforcing '--enable-lto=true on node < 10 to avoid gyp error"
+	export npm_config_enable_lto=true
 fi
 
 yarn
