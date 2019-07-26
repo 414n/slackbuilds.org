@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=VisualVM
+Exec=/usr/bin/visualvm %F
+Icon=visualvm
+Type=Application
+Terminal=false
+Categories=System;
