@@ -23,8 +23,8 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=vscode
-VERSION=${VERSION:-1.36.1}
-COMMIT=${COMMIT:2213894ea0415ee8c85c5eea0d0ff81ecc191529}
+VERSION=${VERSION:-1.37.0}
+COMMIT=${COMMIT:036a6b1d3ac84e5ca96a17a44e63a87971f8fcc8}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -77,7 +77,8 @@ then
 fi
 
 yarn
-node --max_old_space_size=2048 ./node_modules/.bin/gulp vscode-linux-${BUILDARCH}
+# Need more than 2GB of memory...
+node --max_old_space_size=4096 ./node_modules/.bin/gulp vscode-linux-${BUILDARCH}
 
 cd $TMP/VSCode-linux-$BUILDARCH
 
