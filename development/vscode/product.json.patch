@@ -1,21 +1,23 @@
---- a/product.json
-+++ b/product.json
-@@ -22,5 +22,17 @@
- 	"urlProtocol": "code-oss",
- 	"extensionAllowedProposedApi": [
- 		"ms-vscode.references-view"
+Index: tmp/product.json
+===================================================================
+--- tmp.orig/product.json	2020-05-21 18:21:15.983378619 +0200
++++ tmp/product.json	2020-05-21 18:23:03.780373389 +0200
+@@ -115,5 +115,17 @@
+ 				"publisherDisplayName": "Microsoft"
+ 			}
+ 		}
 -	]
 +	],
-+	"welcomePage": "http://go.microsoft.com/fwlink/?LinkId=723048",
-+	"quality": "stable",
-+	"extensionsGallery": {
-+		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-+		"cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
-+		"itemUrl": "https://marketplace.visualstudio.com/items"
-+	},
-+	"documentationUrl": "http://go.microsoft.com/fwlink/?LinkID=533484#vscode",
-+	"releaseNotesUrl": "http://go.microsoft.com/fwlink/?LinkID=533483#vscode",
-+	"twitterUrl": "http://go.microsoft.com/fwlink/?LinkID=533687",
-+	"requestFeatureUrl": "http://go.microsoft.com/fwlink/?LinkID=533482",
-+	"privacyStatementUrl": "http://go.microsoft.com/fwlink/?LinkID=528096&clcid=0x409"
++       "welcomePage": "http://go.microsoft.com/fwlink/?LinkId=723048",
++       "quality": "stable",
++       "extensionsGallery": {
++               "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
++               "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
++               "itemUrl": "https://marketplace.visualstudio.com/items"
++       },
++       "documentationUrl": "http://go.microsoft.com/fwlink/?LinkID=533484#vscode",
++       "releaseNotesUrl": "http://go.microsoft.com/fwlink/?LinkID=533483#vscode",
++       "twitterUrl": "http://go.microsoft.com/fwlink/?LinkID=533687",
++       "requestFeatureUrl": "http://go.microsoft.com/fwlink/?LinkID=533482",
++       "privacyStatementUrl": "http://go.microsoft.com/fwlink/?LinkID=528096&clcid=0x409"
  }
