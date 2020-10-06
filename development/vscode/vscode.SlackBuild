@@ -23,8 +23,8 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=vscode
-VERSION=${VERSION:-1.46.0}
-COMMIT=${COMMIT:-a5d1cc28bb5da32ec67e86cc50f84c67cc690321}
+VERSION=${VERSION:-1.49.3}
+COMMIT=${COMMIT:-2af051012b66169dde0c4dfae3f5ef48f787ff69}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -64,6 +64,7 @@ find -L . \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
 patch -p1 -i ${CWD}/product.json.patch
+patch -p1 -i $CWD/no-git-cmds-please.patch
 
 # Pass down these options if not on node >=10, or else build will fail because
 # of a gyp error.

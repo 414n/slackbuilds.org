@@ -1,0 +1,8 @@
+--- a/build/npm/postinstall.js
++++ b/build/npm/postinstall.js
+@@ -74,4 +74,4 @@
+ yarnInstall('test/integration/browser'); // node modules required for integration
+ yarnInstallBuildDependencies(); // node modules for watching, specific to host node version, not electron
+ 
+-cp.execSync('git config pull.rebase true');
++//cp.execSync('git config pull.rebase true');
