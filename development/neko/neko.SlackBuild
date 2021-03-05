@@ -27,7 +27,7 @@
 #
 # 1 - Initial release.
 PRGNAM=neko
-VERSION=${VERSION:-2.2.0}
+VERSION=${VERSION:-2.3.0}
 INT_VERSION="$(echo $VERSION | tr . -)"
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
