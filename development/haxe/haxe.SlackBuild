@@ -27,9 +27,9 @@
 #
 # 1 - Initial release.
 PRGNAM=haxe
-VERSION=${VERSION:-3.4.7}
-OCAMLLIBS_COMMIT=${OCAMLLIBS_COMMIT:-ab5be31c6dd1fcd761c2ba16c5d767bcf6792490}
-HAXELIB_VERSION=${HAXELIB_VERSION:-3.3.0}
+VERSION=${VERSION:-4.2.1}
+HX3COMPAT_COMMIT=${HX3COMPAT_COMMIT:-f1f18201e5c0479cb5adf5f6028788b37f37b730}
+HAXELIB_VERSION=${HAXELIiB_VERSION:-4.0.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 DOCS="README.md"
@@ -71,8 +71,8 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION 
 tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
-tar xvf $CWD/ocamllibs-${OCAMLLIBS_COMMIT}.tar.?z* --strip-components=1 -C $PRGNAM-$VERSION/libs
 tar xvf $CWD/haxelib-${HAXELIB_VERSION}.tar.?z* -C $PRGNAM-$VERSION/extra --transform="s/haxelib-${HAXELIB_VERSION}/haxelib_src/g"
+tar --strip-components=1 -xvf $CWD/hx3compat-${HX3COMPAT_COMMIT}.tar.?z* -C $PRGNAM-$VERSION/extra/haxelib_src/hx3compat
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
@@ -84,7 +84,7 @@ find -L . \
 # CFLAGS here are compiler flags for ocamlc, not gcc ones, so we disable them
 unset CFLAGS CXXFLAGS
 # no parallel jobs, there are some issues with them
-make -j1
+make OCAMLOPT=ocamlopt.opt -j1
 mkdir -p $PKG/usr $PKG/etc/profile.d 
 make install DESTDIR=$PKG INSTALL_LIB_DIR=$PKG/usr/lib${LIBDIRSUFFIX}/haxe
 

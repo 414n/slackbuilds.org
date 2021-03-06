@@ -1,0 +1,6 @@
+Dune is a build system for OCaml projects. Using it, you can build
+executables, libraries, run tests, and much more.
+
+Dune has rules that precisely capture how the OCaml toolchain works. It
+is able to interoperate with most of the existing tools like OPAM,
+merlin, reason, and js_of_ocaml.

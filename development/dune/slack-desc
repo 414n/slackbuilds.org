@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+    |-----handy-ruler------------------------------------------------------|
+dune: dune - a composable build system for OCaml 
+dune:
+dune: Dune is a build system for OCaml projects. Using it, you can build
+dune: executables, libraries, run tests, and much more.
+dune: Dune has rules that precisely capture how the OCaml toolchain works.
+dune: It is able to interoperate with most of the existing tools like OPAM,
+dune: merlin, reason, and js_of_ocaml.
+dune:
+dune: Homepage:
+dune:
+dune: https://dune.build

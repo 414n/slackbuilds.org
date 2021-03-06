@@ -1,9 +1,9 @@
 PRGNAM="haxe"
-VERSION="3.4.7"
+VERSION="4.2.1"
 HOMEPAGE="https://haxe.org"
-DOWNLOAD="https://github.com/HaxeFoundation/haxe/archive/3.4.7.tar.gz
-https://codeload.github.com/HaxeFoundation/ocamllibs/tar.gz/ab5be31c6dd1fcd761c2ba16c5d767bcf6792490
-https://github.com/HaxeFoundation/haxelib/archive/3.3.0.tar.gz"
+DOWNLOAD="https://github.com/HaxeFoundation/haxe/archive/4.2.1.tar.gz
+https://codeload.github.com/haxefoundation/hx3compat/tar.gz/f1f18201e5c0479cb5adf5f6028788b37f37b730
+https://github.com/HaxeFoundation/haxelib/archive/4.0.2.tar.gz"
 MD5SUM="2afed2c1c13cd382e7afd9f7a55f0a63
 552db963a4b51cb9cbe9b55c2c618472
 b95523bdebe94d8485a0e23124f7befc"
