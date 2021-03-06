@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+                  |-----handy-ruler------------------------------------------------------|
+ocaml-ppx_derivers: ocaml-ppx_derivers - Shared [@@deriving] plugin registry 
+ocaml-ppx_derivers:
+ocaml-ppx_derivers: Ppx_derivers is a tiny package whose sole purpose is to allow
+ocaml-ppx_derivers: ppx_deriving and ppx_type_conv to inter-operate gracefully when linked
+ocaml-ppx_derivers: as part of the same ocaml-migrate-parsetree driver.
+ocaml-ppx_derivers:
+ocaml-ppx_derivers:
+ocaml-ppx_derivers:
+ocaml-ppx_derivers: Homepage:
+ocaml-ppx_derivers:
+ocaml-ppx_derivers: https://github.com/ocaml-ppx/ppx_derivers
