@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+            |-----handy-ruler------------------------------------------------------|
+ocaml-ppxlib: ocaml-ppxlib - Standard library for ppx rewriters
+ocaml-ppxlib:
+ocaml-ppxlib: Ppxlib is the standard library for ppx rewriters and other programs
+ocaml-ppxlib: that manipulate the in-memory reprensation of OCaml programs, a.k.a
+ocaml-ppxlib: the "Parsetree".
+ocaml-ppxlib:
+ocaml-ppxlib:
+ocaml-ppxlib:
+ocaml-ppxlib: Homepage:
+ocaml-ppxlib:
+ocaml-ppxlib: https://github.com/ocaml-ppx/ppxlib
