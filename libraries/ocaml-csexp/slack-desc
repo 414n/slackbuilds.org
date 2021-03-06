@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+           |-----handy-ruler------------------------------------------------------|
+ocaml-csexp: ocaml-csexp - Parsing and printing of S-expressions in Canonical form
+ocaml-csexp:
+ocaml-csexp: This library provides minimal support for Canonical S-expressions.
+ocaml-csexp: Canonical S-expressions are a binary encoding of S-expressions that
+ocaml-csexp: is super simple and well suited for communication between programs.
+ocaml-csexp:
+ocaml-csexp:
+ocaml-csexp:
+ocaml-csexp:
+ocaml-csexp:
+ocaml-csexp: https://github.com/ocaml-dune/csexp

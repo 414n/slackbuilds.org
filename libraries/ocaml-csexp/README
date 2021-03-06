@@ -1,0 +1,7 @@
+Parsing and printing of S-expressions in Canonical form
+
+This library provides minimal support for Canonical S-expressions [1].
+Canonical S-expressions are a binary encoding of S-expressions that is
+super simple and well suited for communication between programs.
+
+[1]: https://en.wikipedia.org/wiki/Canonical_S-expressions
