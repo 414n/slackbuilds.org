@@ -1,0 +1,15 @@
+PRGNAM="haxe"
+VERSION="3.4.7"
+HOMEPAGE="https://haxe.org"
+DOWNLOAD="https://github.com/HaxeFoundation/haxe/archive/3.4.7.tar.gz
+https://codeload.github.com/HaxeFoundation/ocamllibs/tar.gz/ab5be31c6dd1fcd761c2ba16c5d767bcf6792490
+https://github.com/HaxeFoundation/haxelib/archive/3.3.0.tar.gz"
+MD5SUM="2afed2c1c13cd382e7afd9f7a55f0a63
+552db963a4b51cb9cbe9b55c2c618472
+b95523bdebe94d8485a0e23124f7befc"
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES="ocaml,camlp4,neko"
+MAINTAINER="Alan Alberghini"
+EMAIL="414N@slacky.it"
+APPROVED=""

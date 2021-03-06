@@ -1,0 +1,131 @@
+#!/bin/sh
+
+# Slackware build script for haxe
+
+# Copyright (c) 2018 Alan Alberghini <414N@slacky.it>
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+#  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+#  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO
+#  EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+#  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+#  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+#  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+#  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+#  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# -----------------------------------------------------------------------------
+#
+# Build history:
+#
+# 1 - Initial release.
+PRGNAM=haxe
+VERSION=${VERSION:-3.4.7}
+OCAMLLIBS_COMMIT=${OCAMLLIBS_COMMIT:-ab5be31c6dd1fcd761c2ba16c5d767bcf6792490}
+HAXELIB_VERSION=${HAXELIB_VERSION:-3.3.0}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_SBo}
+DOCS="README.md"
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/SBo}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+# Automatically determine the architecture we're building on:
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i586 ;;
+    arm*) ARCH=arm ;;
+    # Unless $ARCH is already set, use uname -m for all other archs:
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+
+if [ "$ARCH" = "i586" ]; then
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i686" ]; then
+  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "x86_64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+else
+  SLKCFLAGS="-O2"
+  LIBDIRSUFFIX=""
+fi
+
+set -e
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+rm -rf $PRGNAM-$VERSION 
+tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+tar xvf $CWD/ocamllibs-${OCAMLLIBS_COMMIT}.tar.?z* --strip-components=1 -C $PRGNAM-$VERSION/libs
+tar xvf $CWD/haxelib-${HAXELIB_VERSION}.tar.?z* -C $PRGNAM-$VERSION/extra --transform="s/haxelib-${HAXELIB_VERSION}/haxelib_src/g"
+cd $PRGNAM-$VERSION
+chown -R root:root .
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+  -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+
+# CFLAGS here are compiler flags for ocamlc, not gcc ones, so we disable them
+unset CFLAGS CXXFLAGS
+# no parallel jobs, there are some issues with them
+make -j1
+mkdir -p $PKG/usr $PKG/etc/profile.d 
+make install DESTDIR=$PKG INSTALL_LIB_DIR=$PKG/usr/lib${LIBDIRSUFFIX}/haxe
+
+# Fix haxe lib directory permissions, as they get set to 0777
+chmod 0555 $PKG/usr/lib${LIBDIRSUFFIX}/haxe/lib
+
+# Fix binary links, as they keep the $PKG part in their source
+ln -sf /usr/lib${LIBDIRSUFFIX}/haxe/haxe $PKG/usr/bin/
+ln -sf /usr/lib${LIBDIRSUFFIX}/haxe/haxelib $PKG/usr/bin/
+
+# Install profile files
+cat << EOF > $PKG/etc/profile.d/haxe.sh
+#!/bin/sh
+
+export HAXE_STD_PATH=/usr/lib${LIBDIRSUFFIX}/haxe/std
+export HAXE_HOME=/usr/lib${LIBDIRSUFFIX}/haxe
+export HAXELIB_PATH=/usr/lib${LIBDIRSUFFIX}/haxe/lib
+EOF
+
+cat << EOF > $PKG/etc/profile.d/haxe.csh
+#!/bin/csh
+
+setenv HAXE_STD_PATH /usr/lib${LIBDIRSUFFIX}/haxe/std
+setenv HAXE_HOME /usr/lib${LIBDIRSUFFIX}/haxe
+setenv HAXELIB_PATH /usr/lib${LIBDIRSUFFIX}/haxe/lib
+EOF
+
+chmod 0755 $PKG/etc/profile.d/*
+
+
+find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a \
+  $DOCS \
+  $PKG/usr/doc/$PRGNAM-$VERSION
+cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+
+mkdir -p $PKG/install
+cat $CWD/slack-desc > $PKG/install/slack-desc
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
