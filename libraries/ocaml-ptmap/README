@@ -1,0 +1,4 @@
+Maps of integers implemented as Patricia trees
+
+An implementation inspired by Okasaki & Gill's paper 'Fast Mergeable
+Integer Maps'.
