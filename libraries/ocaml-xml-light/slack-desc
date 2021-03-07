@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+               |-----handy-ruler------------------------------------------------------|
+ocaml-xml-light: ocaml-xml-light - minimal XML parser & printer for OCaml
+ocaml-xml-light:
+ocaml-xml-light: This library provides functions to parse an XML document into an OCaml
+ocaml-xml-light: data structure, work with it, and print it back to an XML document.
+ocaml-xml-light: It support also DTD parsing and checking, and is entirely written in
+ocaml-xml-light: OCaml, hence it does not require additional C library.
+ocaml-xml-light:
+ocaml-xml-light:
+ocaml-xml-light: Homepage:
+ocaml-xml-light:
+ocaml-xml-light: https://github.com/ncannasse/xml-light
