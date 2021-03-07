@@ -1,0 +1,9 @@
+Binding to libuv: cross-platform asynchronous I/O
+
+Luv is a binding to libuv, the cross-platform C library that does
+asynchronous I/O in Node.js and runs its main loop.
+
+Besides asynchronous I/O, libuv also supports multiprocessing and
+multithreading. Multiple event loops can be run in different threads.
+libuv also exposes a lot of other functionality, amounting to a full OS
+API, and an alternative to the standard module Unix.

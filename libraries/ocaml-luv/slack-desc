@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+         |-----handy-ruler------------------------------------------------------|
+ocaml-luv: ocaml-luv - Binding to libuv: cross-platform asynchronous I/O
+ocaml-luv:
+ocaml-luv: Luv is a binding to libuv, the cross-platform C library that does
+ocaml-luv: asynchronous I/O in Node.js and runs its main loop.
+ocaml-luv: Besides asynchronous I/O, libuv also supports multiprocessing and
+ocaml-luv: multithreading. Multiple event loops can be run in different threads.
+ocaml-luv: libuv also exposes a lot of other functionality, amounting to a full
+ocaml-luv: OS API, and an alternative to the standard module Unix.
+ocaml-luv: 
+ocaml-luv: Homepage:
+ocaml-luv: https://github.com/aantron/luv
