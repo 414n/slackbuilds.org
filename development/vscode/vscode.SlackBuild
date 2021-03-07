@@ -23,8 +23,8 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=vscode
-VERSION=${VERSION:-1.49.3}
-COMMIT=${COMMIT:-2af051012b66169dde0c4dfae3f5ef48f787ff69}
+VERSION=${VERSION:-1.54.1}
+COMMIT=${COMMIT:-f30a9b73e8ffc278e71575118b6bf568f04587c8}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -77,9 +77,10 @@ then
 	export npm_config_enable_lto=true
 fi
 
-yarn
+YARN_CACHE_FOLDER=$TMP/yarn-cache \
+       yarn
 # Need more than 2GB of memory...
-node --max_old_space_size=4096 ./node_modules/.bin/gulp vscode-linux-${BUILDARCH}
+node --max_old_space_size=8192 ./node_modules/.bin/gulp vscode-linux-${BUILDARCH}
 
 cd $TMP/VSCode-linux-$BUILDARCH
 
