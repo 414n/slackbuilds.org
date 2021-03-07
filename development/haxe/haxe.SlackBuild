@@ -71,6 +71,7 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION 
 tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+# these would've been git submodules in specific dirs, so extract them in specific subdirs
 tar xvf $CWD/haxelib-${HAXELIB_VERSION}.tar.?z* -C $PRGNAM-$VERSION/extra --transform="s/haxelib-${HAXELIB_VERSION}/haxelib_src/g"
 tar --strip-components=1 -xvf $CWD/hx3compat-${HX3COMPAT_COMMIT}.tar.?z* -C $PRGNAM-$VERSION/extra/haxelib_src/hx3compat
 cd $PRGNAM-$VERSION
@@ -83,33 +84,29 @@ find -L . \
 
 # CFLAGS here are compiler flags for ocamlc, not gcc ones, so we disable them
 unset CFLAGS CXXFLAGS
+# Avoid using an installed version of haxe for this build
+unset HAXELIB_PATH HAXE_HOME HAXE_STD_PATH
 # no parallel jobs, there are some issues with them
 make OCAMLOPT=ocamlopt.opt -j1
 mkdir -p $PKG/usr $PKG/etc/profile.d 
-make install DESTDIR=$PKG INSTALL_LIB_DIR=$PKG/usr/lib${LIBDIRSUFFIX}/haxe
-
-# Fix haxe lib directory permissions, as they get set to 0777
-chmod 0555 $PKG/usr/lib${LIBDIRSUFFIX}/haxe/lib
-
-# Fix binary links, as they keep the $PKG part in their source
-ln -sf /usr/lib${LIBDIRSUFFIX}/haxe/haxe $PKG/usr/bin/
-ln -sf /usr/lib${LIBDIRSUFFIX}/haxe/haxelib $PKG/usr/bin/
+make install DESTDIR=$PKG INSTALL_DIR=/usr 
+#INSTALL_LIB_DIR=$PKG/usr/lib${LIBDIRSUFFIX}/haxe
 
 # Install profile files
 cat << EOF > $PKG/etc/profile.d/haxe.sh
 #!/bin/sh
 
-export HAXE_STD_PATH=/usr/lib${LIBDIRSUFFIX}/haxe/std
-export HAXE_HOME=/usr/lib${LIBDIRSUFFIX}/haxe
-export HAXELIB_PATH=/usr/lib${LIBDIRSUFFIX}/haxe/lib
+export HAXE_STD_PATH=/usr/share/haxe/std
+export HAXE_HOME=/usr/share/haxe
+export HAXELIB_PATH=/usr/share/haxe/lib
 EOF
 
 cat << EOF > $PKG/etc/profile.d/haxe.csh
 #!/bin/csh
 
-setenv HAXE_STD_PATH /usr/lib${LIBDIRSUFFIX}/haxe/std
-setenv HAXE_HOME /usr/lib${LIBDIRSUFFIX}/haxe
-setenv HAXELIB_PATH /usr/lib${LIBDIRSUFFIX}/haxe/lib
+setenv HAXE_STD_PATH /usr/share/haxe/std
+setenv HAXE_HOME /usr/share/haxe
+setenv HAXELIB_PATH /usr/share/haxe/lib
 EOF
 
 chmod 0755 $PKG/etc/profile.d/*
