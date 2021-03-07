@@ -1,0 +1,30 @@
+--- a/Makefile
++++ b/Makefile
+@@ -1,6 +1,7 @@
+ 
+ VERSION:=$(shell git --git-dir=.git describe --always --long)
+ RELEASE:=1.7.8
++DESTDIR ?= /usr
+ 
+ ifndef VERSION
+ VERSION:=$(RELEASE)
+@@ -14,7 +15,7 @@
+ 	$(MAKE) -C src build
+ 
+ install:
+-	$(MAKE) -C src VERSION=$(VERSION) install
++	$(MAKE) -C src VERSION=$(VERSION) DESTDIR=$(DESTDIR) install
+ 
+ doc:
+ 	$(MAKE) -C src doc
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -58,7 +58,7 @@
+ 	$(OCAMLC) -i $< > $@
+ 
+ install:
+-	ocamlfind install -patch-version $(VERSION) extlib META extLib.cma $(MLI) $(CMI) -optional extLib.cmxa $(CMX) extLib.cmxs extLib.a extLib.lib $(CMT) $(CMTI)
++	ocamlfind install -patch-version $(VERSION) -destdir $(DESTDIR) extlib META extLib.cma $(MLI) $(CMI) -optional extLib.cmxa $(CMX) extLib.cmxs extLib.a extLib.lib $(CMT) $(CMTI)
+ 
+ uninstall:
+ 	ocamlfind remove extlib
