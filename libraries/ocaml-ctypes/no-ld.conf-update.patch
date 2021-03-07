@@ -1,0 +1,17 @@
+--- a/Makefile
++++ b/Makefile
+@@ -149,12 +149,12 @@
+ 
+ #installation
+ META-install:
+-	$(OCAMLFIND) install -destdir $(DESTDIR) ctypes META CHANGES.md
++	$(OCAMLFIND) install -destdir $(DESTDIR) -ldconf /dev/null ctypes META CHANGES.md
+ 
+ install-%: PROJECT=$*
+ install-%:
+ 	$(if $(filter yes,$($(PROJECT).install)),\
+-		$(OCAMLFIND) install -destdir $(DESTDIR) -add ctypes -optional $^ \
++		$(OCAMLFIND) install -destdir $(DESTDIR) -ldconf /dev/null -add ctypes -optional $^ \
+                    $(LIB_TARGETS) $(LIB_TARGET_EXTRAS) \
+                    $(INSTALL_MLIS) $(INSTALL_CMIS) \
+                    $(INSTALL_CMTS) $(INSTALL_CMTIS) \

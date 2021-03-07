@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+            |-----handy-ruler------------------------------------------------------|
+ocaml-ctypes: ocaml-ctypes - Combinators for binding to C libraries 
+ocaml-ctypes:
+ocaml-ctypes: ctypes is a library for binding to C libraries using pure OCaml. The
+ocaml-ctypes: primary aim is to make writing C extensions as straightforward as possible.
+ocaml-ctypes: The core of ctypes is a set of combinators for describing the
+ocaml-ctypes: structure of C types -- numeric types, arrays, pointers, structs,
+ocaml-ctypes: unions and functions. You can use these combinators to describe the
+ocaml-ctypes: types of the functions that you want to call, then bind directly to
+ocaml-ctypes: those functions -- all without writing or generating any C!
+ocaml-ctypes: Homepage:
+ocaml-ctypes: https://github.com/ocamllabs/ocaml-ctypes
