@@ -70,7 +70,7 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $SRCNAME-$VERSION
-tar xvf $CWD/$SRCNAME-2.8.2.tar.gz
+tar xvf $CWD/$SRCNAME-$VERSION.tar.gz
 cd $SRCNAME-$VERSION
 chown -R root:root .
 find . \
