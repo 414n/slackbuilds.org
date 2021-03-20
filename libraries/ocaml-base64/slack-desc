@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+            |-----handy-ruler------------------------------------------------------|
+ocaml-base64: ocaml-base64 - Base64 encoding for OCaml
+ocaml-base64:
+ocaml-base64: Base64 is a group of similar binary-to-text encoding schemes that
+ocaml-base64: represent binary data in an ASCII string format by translating it into
+ocaml-base64: a radix-64 representation. It is specified in RFC 4648.
+ocaml-base64:
+ocaml-base64:
+ocaml-base64:
+ocaml-base64: Homepage:
+ocaml-base64:
+ocaml-base64: https://github.com/mirage/ocaml-base64
