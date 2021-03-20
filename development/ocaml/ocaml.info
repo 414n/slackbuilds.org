@@ -1,8 +1,8 @@
 PRGNAM="ocaml"
-VERSION="4.12.0"
+VERSION="4.08.0"
 HOMEPAGE="http://caml.inria.fr"
-DOWNLOAD="http://caml.inria.fr/pub/distrib/ocaml-4.12/ocaml-4.12.0.tar.xz \
-          http://caml.inria.fr/pub/distrib/ocaml-4.12/ocaml-4.12-refman-html.tar.gz"
+DOWNLOAD="http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.1.tar.xz \
+          http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08-refman-html.tar.gz"
 MD5SUM="7343cd398d477001db2c3f2ac92e12ea \
         1bda3d0a46328a985c817d551423e2c6"
 DOWNLOAD_x86_64=""

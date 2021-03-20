@@ -25,6 +25,7 @@
 
 PRGNAM=ocaml
 VERSION=${VERSION:-4.12.0}
+REFVERSION=${VERSION%.*}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -90,7 +91,7 @@ find $PKG/usr/man -type f -exec gzip -9 {} \;
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a Changes INSTALL* LICENSE README* VERSION \
   $PKG/usr/doc/$PRGNAM-$VERSION
-tar -xvf $CWD/ocaml-4.12-refman-html.tar.gz --no-same-owner -C $PKG/usr/doc/$PRGNAM-$VERSION/
+tar -xvf $CWD/ocaml-$REFVERSION-refman-html.tar.gz --no-same-owner -C $PKG/usr/doc/$PRGNAM-$VERSION/
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
