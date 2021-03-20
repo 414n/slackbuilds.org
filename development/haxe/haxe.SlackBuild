@@ -29,7 +29,7 @@
 PRGNAM=haxe
 VERSION=${VERSION:-4.2.1}
 HX3COMPAT_COMMIT=${HX3COMPAT_COMMIT:-f1f18201e5c0479cb5adf5f6028788b37f37b730}
-HAXELIB_VERSION=${HAXELIiB_VERSION:-4.0.2}
+HAXELIB_VERSION=${HAXELIB_VERSION:-4.0.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 DOCS="README.md"
@@ -82,6 +82,13 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+# Patch the OCaml source files to use "Stdlib." instead of "Pervasives." (deprecated)
+find . -name "*.ml" -type f -exec sed -i "s/Pervasives\./Stdlib./g" {} \;
+
+# Needed to make Haxe build with OCaml 4.06 and 4.07
+# For more info, see: https://github.com/HaxeFoundation/haxe/issues/6883#issuecomment-370142073
+#export OCAMLPARAM="safe-string=0,_"
+
 # CFLAGS here are compiler flags for ocamlc, not gcc ones, so we disable them
 unset CFLAGS CXXFLAGS
 # Avoid using an installed version of haxe for this build
@@ -97,16 +104,12 @@ cat << EOF > $PKG/etc/profile.d/haxe.sh
 #!/bin/sh
 
 export HAXE_STD_PATH=/usr/share/haxe/std
-export HAXE_HOME=/usr/share/haxe
-export HAXELIB_PATH=/usr/share/haxe/lib
 EOF
 
 cat << EOF > $PKG/etc/profile.d/haxe.csh
 #!/bin/csh
 
 setenv HAXE_STD_PATH /usr/share/haxe/std
-setenv HAXE_HOME /usr/share/haxe
-setenv HAXELIB_PATH /usr/share/haxe/lib
 EOF
 
 chmod 0755 $PKG/etc/profile.d/*
