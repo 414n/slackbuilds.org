@@ -64,10 +64,10 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-# Remove test dir to skip tests (would require ocaml-ounit too)
-rm -r test
+# Patch the OCaml source files to use "Stdlib." instead of "Pervasives." (deprecated)
+find . -name "*.ml" -type f -exec sed -i "s/Pervasives\./Stdlib./g" {} \;
 
-dune build
+dune build --release
 make install DESTDIR=$PKG
 
 # move docs to /usr/doc/$PRGNAM-$VERSION
