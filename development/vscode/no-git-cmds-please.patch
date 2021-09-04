@@ -1,8 +1,10 @@
---- a/build/npm/postinstall.js
-+++ b/build/npm/postinstall.js
-@@ -74,4 +74,4 @@
- yarnInstall('test/integration/browser'); // node modules required for integration
- yarnInstallBuildDependencies(); // node modules for watching, specific to host node version, not electron
+--- a/build/npm/postinstall.js	2021-09-01 12:25:58.000000000 +0200
++++ b/build/npm/postinstall.js	2021-09-04 16:32:44.422373821 +0200
+@@ -90,5 +90,5 @@
+ 	yarnInstall(watchPath);
+ }
  
--cp.execSync('git config pull.rebase true');
-+//cp.execSync('git config pull.rebase true');
+-cp.execSync('git config pull.rebase merges');
+-cp.execSync('git config blame.ignoreRevsFile .git-blame-ignore');
++//cp.execSync('git config pull.rebase merges');
++//cp.execSync('git config blame.ignoreRevsFile .git-blame-ignore');
