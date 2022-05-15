@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+         |-----handy-ruler------------------------------------------------------|
+rtl88x2bu: rtl88x2bu (Realtek RTL88x2BU Driver)
+rtl88x2bu:
+rtl88x2bu: Realtek RTL88x2BU Driver maintained by RinCat for Arch Linux.
+rtl88x2bu:
+rtl88x2bu:
+rtl88x2bu: If you experience problems using this driver, please visit
+rtl88x2bu: project's homepage to learn about possible solutions.
+rtl88x2bu:
+rtl88x2bu: Homepage: https://github.com/RinCat/RTL88x2BU-Linux-Driver 
+rtl88x2bu:
+rtl88x2bu:
