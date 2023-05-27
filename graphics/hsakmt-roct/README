@@ -1,0 +1,13 @@
+Radeon Open Compute Thunk Interface
+
+This is the user-mode API interfaces used to interact with the ROCk
+driver.
+
+Starting from the 1.7 release, ROCt uses drm render device. This requires
+the user to belong to video group.
+
+Add the user account to video group with
+
+# usermod -a -G video username
+
+if the user is not part of video group yet. 
