@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+                |-----handy-ruler------------------------------------------------------|
+rocm-device-libs: ROCm Device Libraries 
+rocm-device-libs:
+rocm-device-libs: This contains the sources and cmake build system files for a set of
+rocm-device-libs: AMD specific device-side language runtime libraries. Specifically:
+rocm-device-libs: oclc (Open Compute library controls)
+rocm-device-libs: ocml (Open Compute Math library)
+rocm-device-libs: ockl (Open Compute Kernel library)
+rocm-device-libs: opencl (OpenCL build-in library)
+rocm-device-libs: hip (HIP built-in library)
+rocm-device-libs: hc (Heterogeneous Compute built-in library)
+rocm-device-libs: https://www.amd.com/en/graphics/servers-solutions-rocm

@@ -1,0 +1,9 @@
+This contains the sources and CMake build system for a set of AMD
+specific device-side language runtime libraries. Specifically:
+
+oclc 	Open Compute library controls (documentation)
+ocml 	Open Compute Math library (documentation)
+ockl 	Open Compute Kernel library (documentation)
+opencl 	OpenCL built-in library
+hip 	HIP built-in library
+hc 	Heterogeneous Compute built-in library
