@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+         |-----handy-ruler------------------------------------------------------|
+rocm-llvm: Radeon Open Compute - LLVM toolchain (llvm, clang, lld)
+rocm-llvm:
+rocm-llvm: ROCm is a brand name for the ROCm open software platform (for
+rocm-llvm: software) or the ROCm open platform ecosystem (includes hardware like
+rocm-llvm: FPGAs or other CPU architectures).
+rocm-llvm:
+rocm-llvm: This is the llvm fork that powers the ROCm HIP runtime.
+rocm-llvm:
+rocm-llvm: Homepage:
+rocm-llvm:
+rocm-llvm: https://www.amd.com/en/graphics/servers-solutions-rocm

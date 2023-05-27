@@ -1,0 +1,12 @@
+ROCm is a brand name for the ROCm open software platform (for software)
+or the ROCm open platform ecosystem (includes hardware like FPGAs or
+other CPU architectures).
+
+This is the llvm fork that powers the ROCm HIP runtime.
+
+WARNING: this build is extemely taxing both CPU-wise, RAM-wise and
+disk-wise: make sure that your /tmp has at least 16GB free or use another
+temporary directory overriding the TMP variable, i.e.:
+
+TMP=/some/path ./rocm-llvm.SlackBuild
+
