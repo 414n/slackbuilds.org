@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+                     |-----handy-ruler------------------------------------------------------|
+rocm-compiler-support: rocm-compiler-support
+rocm-compiler-support:
+rocm-compiler-support: The compiler support repository provides various Lightning Compiler
+rocm-compiler-support: related services. It currently contains one library, the Code Object
+rocm-compiler-support: Manager (Comgr) at lib/comgr.
+rocm-compiler-support:
+rocm-compiler-support:
+rocm-compiler-support:
+rocm-compiler-support: Homepage:
+rocm-compiler-support:
+rocm-compiler-support: https://github.com/RadeonOpenCompute/ROCm-CompilerSupport

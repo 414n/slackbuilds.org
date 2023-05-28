@@ -1,0 +1,4 @@
+The compiler support repository provides various Lightning Compiler
+related services.
+
+It currently contains one library, the Code Object Manager (Comgr).
