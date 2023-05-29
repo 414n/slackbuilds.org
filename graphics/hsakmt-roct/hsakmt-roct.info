@@ -1,7 +1,7 @@
 PRGNAM="hsakmt-roct"
 VERSION="5.5.1"
 HOMEPAGE="https://www.amd.com/en/graphics/servers-solutions-rocm"
-DOWNLOAD="https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface/archive/rocm-5.5.1.tar.gz"
+DOWNLOAD="https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface/archive/refs/tags/rocm-5.5.1/ROCT-Thunk-Interface-rocm-5.5.1.tar.gz"
 MD5SUM="aec9deb260a26b58074f2c2b27a95cc2"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
