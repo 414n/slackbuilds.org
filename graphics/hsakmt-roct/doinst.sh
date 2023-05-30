@@ -23,4 +23,4 @@ preserve_perms() {
 }
 
 preserve_perms etc/ld.so.conf.d/hsakmt-roct.conf.new
-ldconfig
+/sbin/ldconfig

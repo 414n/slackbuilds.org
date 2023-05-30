@@ -8,12 +8,12 @@
            |-----handy-ruler------------------------------------------------------|
 hsakmt-roct: Radeon Open Compute Thunk Interface
 hsakmt-roct:
+hsakmt-roct: ROCm is a brand name for the ROCm open software platform (for
+hsakmt-roct: software) or the ROCm open platform ecosystem (includes hardware like
+hsakmt-roct: FPGAs or other CPU architectures).
+hsakmt-roct:
 hsakmt-roct: This is the user-mode API interfaces used to interact with the ROCk
 hsakmt-roct: driver.
-hsakmt-roct:
-hsakmt-roct:
-hsakmt-roct:
-hsakmt-roct:
 hsakmt-roct: Homepage: 
 hsakmt-roct: 
 hsakmt-roct: https://www.amd.com/en/graphics/servers-solutions-rocm
