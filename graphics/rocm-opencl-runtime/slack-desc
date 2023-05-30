@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+                   |-----handy-ruler------------------------------------------------------|
+rocm-opencl-runtime: rocm-opencl-runtime: OpenCL implementation for AMD
+rocm-opencl-runtime:
+rocm-opencl-runtime: This package compiles both the ROCclr and ROCm-OpenCL-Runtime sources
+rocm-opencl-runtime: to provide an OpenCL 2.0 compatible language runtime.
+rocm-opencl-runtime:
+rocm-opencl-runtime: It supports offline and in-process/in-memory compilation.
+rocm-opencl-runtime:
+rocm-opencl-runtime:
+rocm-opencl-runtime: Homepage:
+rocm-opencl-runtime:
+rocm-opencl-runtime: https://github.com/RadeonOpenCompute/ROCm-OpenCL-Runtime

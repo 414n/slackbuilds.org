@@ -1,0 +1,6 @@
+ROCm OpenOpenCL Runtime.
+
+This package compiles both the ROCclr and ROCm-OpenCL-Runtime sources to
+provide an OpenCL 2.0 compatible language runtime.
+
+It supports offline and in-process/in-memory compilation.
