@@ -1,3 +1,7 @@
+ROCm is a brand name for the ROCm open software platform (for software)
+or the ROCm open platform ecosystem (includes hardware like FPGAs or
+other CPU architectures).
+
 The compiler support repository provides various Lightning Compiler
 related services.
 

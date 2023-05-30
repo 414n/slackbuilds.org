@@ -1,7 +1,7 @@
 PRGNAM="rocm-compiler-support"
 VERSION="5.5.1"
 HOMEPAGE="https://github.com/RadeonOpenCompute/ROCm-CompilerSupport"
-DOWNLOAD="https://github.com/RadeonOpenCompute/ROCm-CompilerSupport/archive/rocm-5.5.1.tar.gz"
+DOWNLOAD="https://github.com/RadeonOpenCompute/ROCm-CompilerSupport/archive/refs/tags/rocm-5.5.1/ROCm-CompilerSupport-rocm-5.5.1.tar.gz"
 MD5SUM="e9f91c59e97bad09844c835d0901d851"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
