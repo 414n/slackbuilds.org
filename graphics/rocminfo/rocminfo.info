@@ -1,7 +1,7 @@
 PRGNAM="rocminfo"
 VERSION="5.5.1"
 HOMEPAGE="https://github.com/RadeonOpenCompute/rocminfo"
-DOWNLOAD="https://github.com/RadeonOpenCompute/rocminfo/archive/rocm-5.5.1.tar.gz"
+DOWNLOAD="https://github.com/RadeonOpenCompute/rocminfo/archive/refs/tags/rocm-5.5.1/rocminfo-rocm-5.5.1.tar.gz"
 MD5SUM="c39c82215be5799d7165725e0b258d3f"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

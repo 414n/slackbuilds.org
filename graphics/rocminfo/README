@@ -1,4 +1,11 @@
-ROCm Application for Reporting System Info.
+ROCm is a brand name for the ROCm open software platform (for software)
+or the ROCm open platform ecosystem (includes hardware like FPGAs or
+other CPU architectures).
+
+This is a ROCm Application for Reporting System Info.
+
+This package includes the "rocminfo" and "rocm_agent_enumerator
+programs.
 
 "rocminfo" gives information about the HSA system attributes and agents.
 

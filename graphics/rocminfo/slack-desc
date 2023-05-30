@@ -8,11 +8,11 @@
         |-----handy-ruler------------------------------------------------------|
 rocminfo: rocminfo - ROCm Application for Reporting System Info 
 rocminfo:
-rocminfo: This includes the following programs:
-rocminfo: "rocminfo" gives information about the HSA system attributes and
-rocminfo: agents.
-rocminfo: "rocm_agent_enumerator" prints the list of available AMD GCN ISA or
-rocminfo: architecture names.
+rocminfo: ROCm is a brand name for the ROCm open software platform (for
+rocminfo: software) or the ROCm open platform ecosystem (includes hardware like
+rocminfo: FPGAs or other CPU architectures).
+rocminfo:
+rocminfo: This package includes the rocminfo and rocm_agent_enumerator programs.
 rocminfo:
 rocminfo: Homepage:
 rocminfo:
