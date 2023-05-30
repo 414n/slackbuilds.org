@@ -25,3 +25,4 @@ preserve_perms() {
 preserve_perms etc/ld.so.conf.d/rocm-opencl-runtime.conf.new
 config etc/OpenCL/vendors/amdocl64.icd.new
 
+/sbin/ldconfig

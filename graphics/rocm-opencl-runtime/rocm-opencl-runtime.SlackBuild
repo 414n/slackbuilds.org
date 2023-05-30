@@ -48,9 +48,10 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/SBo}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-
-ROCM_OPENCL_SRC=$TMP/ROCm-OpenCL-Runtime-rocm-$VERSION
-ROCM_CLR_SRC=$TMP/ROCclr-rocm-$VERSION
+SRCNAM_CLR=ROCclr-rocm
+SRCNAM_OPENCL=ROCm-OpenCL-Runtime-rocm
+ROCM_OPENCL_SRC=$TMP/$SRCNAM_OPENCL-$VERSION
+ROCM_CLR_SRC=$TMP/$SRCNAM_CLR-$VERSION
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"
@@ -71,16 +72,19 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf ROCm-OpenCL-Runtime-rocm-$VERSION ROCclr-rocm-$VERSION
-tar xvf $CWD/ROCclr-rocm-$VERSION.tar.gz 
-tar xvf $CWD/ROCm-OpenCL-Runtime-rocm-$VERSION.tar.gz
+rm -rf $SRCNAM_OPENCL-$VERSION $SRCNAM_CLR-$VERSION
+tar xvf $CWD/$SRCNAM_CLR-$VERSION.tar.gz
+tar xvf $CWD/$SRCNAM_OPENCL-$VERSION.tar.gz
 
-cd ROCclr-rocm-$VERSION
+cd $SRCNAM_CLR-$VERSION
 find . \
  \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
  -exec chmod 755 {} \; -o \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
+
+# Re-enable pre-VEGA series support
+patch -p1 -i $CWD/enable-gfx800.patch
 
 mkdir -p build
 cd build
@@ -94,7 +98,7 @@ cd build
   make
 cd ../../
 
-cd ROCm-OpenCL-Runtime-rocm-$VERSION
+cd $SRCNAM_OPENCL-$VERSION
 chown -R root:root .
 find . \
  \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \

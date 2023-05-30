@@ -8,11 +8,11 @@
                    |-----handy-ruler------------------------------------------------------|
 rocm-opencl-runtime: rocm-opencl-runtime: OpenCL implementation for AMD
 rocm-opencl-runtime:
+rocm-opencl-runtime: ROCm is a brand name for the ROCm open software platform (for
+rocm-opencl-runtime: software) or the ROCm open platform ecosystem (includes hardware like
+rocm-opencl-runtime: FPGAs or other CPU architectures).
 rocm-opencl-runtime: This package compiles both the ROCclr and ROCm-OpenCL-Runtime sources
 rocm-opencl-runtime: to provide an OpenCL 2.0 compatible language runtime.
-rocm-opencl-runtime:
-rocm-opencl-runtime: It supports offline and in-process/in-memory compilation.
-rocm-opencl-runtime:
 rocm-opencl-runtime:
 rocm-opencl-runtime: Homepage:
 rocm-opencl-runtime:
