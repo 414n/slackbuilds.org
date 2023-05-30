@@ -8,12 +8,12 @@
         |-----handy-ruler------------------------------------------------------|
 hsa-rocr: hsa-rocr: HSA Runtime API and runtime for ROCm
 hsa-rocr:
+hsa-rocr: ROCm is a brand name for the ROCm open software platform (for
+hsa-rocr: software) or the ROCm open platform ecosystem (includes hardware like
+hsa-rocr: FPGAs or other CPU architectures).
 hsa-rocr: These are the user-mode API interfaces and libraries necessary for
 hsa-rocr: host applications to launch compute kernels to available HSA ROCm
 hsa-rocr: kernel agents.
-hsa-rocr:
-hsa-rocr:
-hsa-rocr:
 hsa-rocr: Homepage:
 hsa-rocr:
 hsa-rocr: https://github.com/RadeonOpenCompute/ROCR-Runtime
