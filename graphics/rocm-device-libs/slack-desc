@@ -8,12 +8,12 @@
                 |-----handy-ruler------------------------------------------------------|
 rocm-device-libs: ROCm Device Libraries 
 rocm-device-libs:
+rocm-device-libs: ROCm is a brand name for the ROCm open software platform (for
+rocm-device-libs: software) or the ROCm open platform ecosystem (includes hardware like
+rocm-device-libs: FPGAs or other CPU architectures).
+rocm-device-libs:
 rocm-device-libs: This contains the sources and cmake build system files for a set of
 rocm-device-libs: AMD specific device-side language runtime libraries. Specifically:
-rocm-device-libs: oclc (Open Compute library controls)
-rocm-device-libs: ocml (Open Compute Math library)
-rocm-device-libs: ockl (Open Compute Kernel library)
-rocm-device-libs: opencl (OpenCL build-in library)
-rocm-device-libs: hip (HIP built-in library)
-rocm-device-libs: hc (Heterogeneous Compute built-in library)
+rocm-device-libs: oclc, ocml, ockl, opencl, hip, hc.
+rocm-device-libs: Homepage:
 rocm-device-libs: https://www.amd.com/en/graphics/servers-solutions-rocm

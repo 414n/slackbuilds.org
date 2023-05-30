@@ -1,3 +1,7 @@
+ROCm is a brand name for the ROCm open software platform (for software)
+or the ROCm open platform ecosystem (includes hardware like FPGAs or
+other CPU architectures).
+
 This contains the sources and CMake build system for a set of AMD
 specific device-side language runtime libraries. Specifically:
 

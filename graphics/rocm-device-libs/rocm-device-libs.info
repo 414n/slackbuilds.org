@@ -1,7 +1,7 @@
 PRGNAM="rocm-device-libs"
 VERSION="5.5.1"
 HOMEPAGE="https://www.amd.com/en/graphics/servers-solutions-rocm"
-DOWNLOAD="https://github.com/RadeonOpenCompute/ROCm-Device-Libs/archive/rocm-5.5.1.tar.gz"
+DOWNLOAD="https://github.com/RadeonOpenCompute/ROCm-Device-Libs/archive/refs/tags/rocm-5.5.1/ROCm-Device-Libs-rocm-5.5.1.tar.gz"
 MD5SUM="18421313683f4b7b0312b1679b36f478"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
