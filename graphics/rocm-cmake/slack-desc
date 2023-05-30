@@ -8,12 +8,12 @@
           |-----handy-ruler------------------------------------------------------|
 rocm-cmake: rocm-cmake
 rocm-cmake:
-rocm-cmake: rocm-cmake is a collection of CMake modules for common build and
-rocm-cmake: development tasks within the ROCm project. It is therefore a build
-rocm-cmake: dependency for many of the libraries that comprise the ROCm platform.
-rocm-cmake: rocm-cmake is not required for building libraries or programs that use
-rocm-cmake: ROCm; it is required for building some of the libraries that are a
-rocm-cmake: part of ROCm.
+rocm-cmake: ROCm is a brand name for the ROCm open software platform (for
+rocm-cmake: software) or the ROCm open platform ecosystem (includes hardware like
+rocm-cmake: FPGAs or other CPU architectures).
+rocm-cmake: rocm-cmake is a build dependency for many of the libraries that
+rocm-cmake: comprise the ROCm platform. It is not required for building libraries
+rocm-cmake: or programs that use ROCm.
 rocm-cmake:
 rocm-cmake: Homepage:
 rocm-cmake: https://github.com/RadeonOpenCompute/rocm-cmake
