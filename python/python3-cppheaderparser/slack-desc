@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+                       |-----handy-ruler------------------------------------------------------|
+python3-cppheaderparser: python3-cppheaderparser
+python3-cppheaderparser:
+python3-cppheaderparser: CppHeaderParser is a pure python module that will parse C++ header
+python3-cppheaderparser: files and generate a data structure representing the class.
+python3-cppheaderparser:
+python3-cppheaderparser: As of version 1.9, python 3 is supported.
+python3-cppheaderparser:
+python3-cppheaderparser:
+python3-cppheaderparser: Homepage:
+python3-cppheaderparser:
+python3-cppheaderparser: http://senexcanis.com/open-source/cppheaderparser/
