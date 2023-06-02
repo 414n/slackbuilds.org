@@ -1,0 +1,27 @@
+ROCm is a brand name for the ROCm open software platform (for software)
+or the ROCm open platform ecosystem (includes hardware like FPGAs or
+other CPU architectures).
+
+HIP is a C++ Runtime API and Kernel Language that allows developers to
+create portable applications for AMD and NVIDIA GPUs from single source
+code.
+
+Key features include:
+
+ - HIP is very thin and has little or no performance impact over coding
+   directly in CUDA mode.
+
+ - HIP allows coding in a single-source C++ programming language
+   including features such as templates, C++11 lambdas, classes,
+   namespaces, and more.
+
+ - HIP allows developers to use the "best" development environment and
+   tools on each target platform.
+ 
+ - The HIPIFY tools automatically convert source from CUDA to HIP.
+
+ - Developers can specialize for the platform (CUDA or AMD) to tune for
+   performance or handle tricky cases.
+
+graphviz and a java runtime are optional dependencies to compile the project
+documentation.

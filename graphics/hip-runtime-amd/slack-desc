@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+               |-----handy-ruler------------------------------------------------------|
+hip-runtime-amd: hip-runtime-amd
+hip-runtime-amd:
+hip-runtime-amd: ROCm is a brand name for the ROCm open software platform (for
+hip-runtime-amd: software) or the ROCm open platform ecosystem (includes hardware like
+hip-runtime-amd: FPGAs or other CPU architectures).
+hip-runtime-amd:
+hip-runtime-amd: HIP is a C++ Runtime API and Kernel Language that allows developers to
+hip-runtime-amd: create portable applications for AMD and NVIDIA GPUs from single
+hip-runtime-amd: source code.
+hip-runtime-amd: Homepage:
+hip-runtime-amd: https://github.com/ROCm-Developer-Tools/HIP
