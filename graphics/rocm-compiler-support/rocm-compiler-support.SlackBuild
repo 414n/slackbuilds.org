@@ -32,8 +32,6 @@ PRGNAM=rocm-compiler-support
 VERSION=${VERSION:-5.5.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
-DOCS="README.md LICENSE.txt"
-COMGR_DOCS="lib/comgr/README.md lib/comgr/LICENSE.txt lib/comgr/NOTICES.txt"
 SRCNAM=ROCm-CompilerSupport-rocm
 
 # Automatically determine the architecture we're building on:
@@ -82,13 +80,14 @@ find . \
 
 mkdir -p build
 cd build
-  VERBOSE=1 cmake \
+  cmake \
     -S ../lib/comgr \
     -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_INSTALL_PREFIX=/opt/rocm \
+    -DAMDGPU_TARGETS="gfx803;gfx900;gfx906;gfx908;gfx90a;gfx1030" \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_PREFIX_PATH=/opt/rocm/llvm \
-    -DLIB_SUFFIX=${LIBDIRSUFFIX} \
     -DCMAKE_BUILD_TYPE=None 
   make
   make install DESTDIR=$PKG
@@ -98,10 +97,8 @@ find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/comgr
-cp -a \
-  $DOCS \
-  $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a $COMGR_DOCS $PKG/usr/doc/$PRGNAM-$VERSION/comgr
+mv $PKG/opt/rocm/share/doc/amd_comgr/* $PKG/usr/doc/$PRGNAM-$VERSION/
+rm -r $PKG/opt/rocm/share
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
