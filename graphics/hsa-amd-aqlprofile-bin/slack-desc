@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+                      |-----handy-ruler------------------------------------------------------|
+hsa-amd-aqlprofile-bin: hsa-amd-aqlprofile-bin
+hsa-amd-aqlprofile-bin:
+hsa-amd-aqlprofile-bin: ROCm is a brand name for the ROCm open software platform (for
+hsa-amd-aqlprofile-bin: software) or the ROCm open platform ecosystem (includes hardware like
+hsa-amd-aqlprofile-bin: FPGAs or other CPU architectures).
+hsa-amd-aqlprofile-bin:
+hsa-amd-aqlprofile-bin: AQLPROFILE library for AMD HSA runtime API extension support.
+hsa-amd-aqlprofile-bin: This repackages the debian package, as this component is closed-source
+hsa-amd-aqlprofile-bin: only.
+hsa-amd-aqlprofile-bin: Homepage:
+hsa-amd-aqlprofile-bin: https://docs.amd.com/

@@ -1,0 +1,8 @@
+ROCm is a brand name for the ROCm open software platform (for software)
+or the ROCm open platform ecosystem (includes hardware like FPGAs or
+other CPU architectures).
+
+AQLPROFILE library for AMD HSA runtime API extension support.
+
+This is a binary repackaging from the deb package, as this component is
+still closed-source.
