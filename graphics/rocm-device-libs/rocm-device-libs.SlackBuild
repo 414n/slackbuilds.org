@@ -76,6 +76,7 @@ cd build
     -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_C_COMPILER=/opt/rocm/llvm/bin/clang \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_PREFIX=/opt/rocm \
     -DLLVM_DIR=/opt/rocm/llvm/lib/cmake/llvm \
     -DCMAKE_BUILD_TYPE=None ..
