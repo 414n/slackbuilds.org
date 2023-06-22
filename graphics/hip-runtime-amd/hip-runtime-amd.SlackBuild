@@ -106,6 +106,7 @@ cd build
     -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_INSTALL_PREFIX=/opt/rocm \
     -DCMAKE_PREFIX_PATH=/opt/rocm/llvm/lib/cmake \
+    -DAMDGPU_TARGETS="gfx803;gfx900;gfx906;gfx908;gfx90a;gfx1030" \
     -DHIP_COMMON_DIR="$TMP/$SRCNAM-$VERSION" \
     -DAMD_OPENCL_PATH="$TMP/$SRCNAM_OPENCL-$VERSION" \
     -DCMAKE_INSTALL_LIBDIR=lib \
@@ -121,6 +122,8 @@ cd ..
 echo '/opt/rocm/hip/lib' > "$PRGNAM.conf"
 install -Dm644 "$PRGNAM.conf" "$PKG/etc/ld.so.conf.d/$PRGNAM.conf.new"
 
+# Patch AMDGPU_TARGETS to include gfx803 in generated hip-config.cmake
+sed -i 's#\(.*set(AMDGPU_TARGETS "\)\(gfx900;.*\)#\1gfx803;\2#g' $PKG/opt/rocm/lib/cmake/hip/hip-config.cmake
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
