@@ -98,7 +98,7 @@ sed -i "s|'share', 'doc', 'terminator'|'doc', '$PRGNAM-$VERSION'|g" terminatorli
 sed -i "s|share/man|man|g" setup.py
 
 CFLAGS=$SLKCFLAGS \
-python3 setup.py --no-user-cfg install-documentation install --prefix=/usr --root=$PKG 
+python3 setup.py --no-user-cfg install-documentation install --prefix=/usr --root=$PKG
 
 rm -f $PKG/usr/doc/$PRGNAM-$VERSION/apidoc/.buildinfo
 rm -f $PKG/usr/doc/$PRGNAM-$VERSION/html/.buildinfo
