@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+       |-----handy-ruler------------------------------------------------------|
+rocrand: rocrand: RAND library for HIP programming language
+rocrand:
+rocrand: ROCm is a brand name for the ROCm open software platform (for
+rocrand: software) or the ROCm open platform ecosystem (includes hardware like
+rocrand: FPGAs or other CPU architectures).
+rocrand: The rocRAND project provides functions that generate pseudo-random
+rocrand: and quasi-random numbers and is implemented in the HIP programming
+rocrand: language and optimised for AMD's latest discrete GPUs.
+rocrand: Homepage:
+rocrand:
+rocrand: https://github.com/ROCmSoftwarePlatform/rocRAND
