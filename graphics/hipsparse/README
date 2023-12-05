@@ -1,0 +1,11 @@
+hipSPARSE is a SPARSE marshalling library with multiple supported
+backends. It sits between your application and a 'worker' SPARSE library,
+where it marshals inputs to the backend library and marshals results to
+your application. hipSPARSE exports an interface that doesn't require the
+client to change, regardless of the chosen backend. Currently, hipSPARSE
+supports rocSPARSE and cuSPARSE backends.
+By default this builds for all AMD GPU targets. You can limit the targets
+by overriding the AMDGPU_TARGETS environment variable from the "all"
+default to a list of semicolon-separated targets, i.e.:
+
+AMDGPU_TARGETS="gfx803;gfx900" su -c ./rocprim.SlackBuild
