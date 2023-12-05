@@ -1,0 +1,11 @@
+rocSPARSE exposes a common interface that provides Basic Linear Algebra
+Subroutines for sparse computation implemented on top of AMD's Radeon
+Open eCosystem Platform ROCm runtime and toolchains. rocSPARSE is created
+using the HIP programming language and optimized for AMD's latest
+discrete GPUs.
+
+By default this builds for all AMD GPU targets. You can limit the targets
+by overriding the AMDGPU_TARGETS environment variable from the "all"
+default to a list of semicolon-separated targets, i.e.:
+
+AMDGPU_TARGETS="gfx803;gfx900" su -c ./rocprim.SlackBuild
