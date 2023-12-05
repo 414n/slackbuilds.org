@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+      |-----handy-ruler------------------------------------------------------|
+hipcub: hipcub: reusable software components for ROCm developers 
+hipcub:
+hipcub: ROCm is a brand name for the ROCm open software platform (for
+hipcub: software) or the ROCm open platform ecosystem (includes hardware like
+hipcub: FPGAs or other CPU architectures).
+hipcub: hipCUB is a thin wrapper library on top of rocPRIM or CUB. It enables
+hipcub: developers to port a project using the CUB library to the HIP layer to
+hipcub: run on AMD hardware. In the ROCm environment, hipCUB uses the rocPRIM
+hipcub: library as the backend. However, on CUDA platforms it uses CUB instead.
+hipcub: Homepage:
+hipcub: https://github.com/ROCmSoftwarePlatform/hipCUB

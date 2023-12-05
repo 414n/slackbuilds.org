@@ -1,0 +1,11 @@
+hipCUB is a thin wrapper library on top of rocPRIM or CUB. It enables
+developers to port a project using the CUB library to the HIP layer to
+run on AMD hardware.
+
+In the ROCm environment, hipCUB uses the rocPRIM library as the backend.
+However, on CUDA platforms it uses CUB instead.
+By default this builds for all AMD GPU targets. You can limit the targets
+by overriding the AMDGPU_TARGETS environment variable from the "all"
+default to a list of semicolon-separated targets, i.e.:
+
+AMDGPU_TARGETS="gfx803;gfx900" su -c ./rocprim.SlackBuild
