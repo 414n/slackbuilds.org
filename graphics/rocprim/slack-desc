@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+       |-----handy-ruler------------------------------------------------------|
+rocprim: rocprim
+rocprim:
+rocprim: ROCm is a brand name for the ROCm open software platform (for
+rocprim: software) or the ROCm open platform ecosystem (includes hardware like
+rocprim: FPGAs or other CPU architectures).
+rocprim: rocPRIM is a header-only library that provides HIP parallel
+rocprim: primitives. You can use this library to develop performant
+rocprim: GPU-accelerated code on AMD ROCm platforms.
+rocprim:
+rocprim: Homepage:
+rocprim: https://github.com/ROCmSoftwarePlatform/rocPRIM 
