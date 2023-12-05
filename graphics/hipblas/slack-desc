@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+       |-----handy-ruler------------------------------------------------------|
+hipblas: hipblas
+hipblas:
+hipblas: ROCm is a brand name for the ROCm open software platform (for
+hipblas: software) or the ROCm open platform ecosystem (includes hardware like
+hipblas: FPGAs or other CPU architectures).
+hipblas: hipBLAS is a Basic Linear Algebra Subprograms (BLAS) marshalling
+hipblas: library with multiple supported backends. It sits between your
+hipblas: application and a 'worker' BLAS library, where it marshals inputs to
+hipblas: the backend library and marshals results to your application.
+hipblas: Homepage:
+hipblas: https://github.com/ROCmSoftwarePlatform/hipBLAS

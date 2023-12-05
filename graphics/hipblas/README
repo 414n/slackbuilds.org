@@ -1,0 +1,8 @@
+hipBLAS is a Basic Linear Algebra Subprograms (BLAS) marshalling library
+with multiple supported backends. It sits between your application and a
+'worker' BLAS library, where it marshals inputs to the backend library
+and marshals results to your application. hipBLAS exports an interface
+that doesn't require the client to change, regardless of the chosen
+backend. Currently, hipBLAS supports rocBLAS and cuBLAS backends.
+
+
