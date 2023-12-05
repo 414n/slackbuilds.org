@@ -1,0 +1,13 @@
+PRGNAM="rocblas"
+VERSION="5.5.1"
+HOMEPAGE="https://github.com/ROCmSoftwarePlatform/rocBLAS"
+DOWNLOAD="https://github.com/ROCmSoftwarePlatform/rocBLAS/archive/refs/tags/rocm-5.5.1/rocBLAS-rocm-5.5.1.tar.gz
+https://github.com/ROCmSoftwarePlatform/Tensile/archive/refs/tags/rocm-5.5.1/Tensile-rocm-5.5.1.tar.gz"
+MD5SUM="5ca30ce01e00db6494143840f8221a67
+fb33d402f2ff2f6a69acc22eeef03890"
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES="hip-runtime-amd python3-wheel msgpack-c python3-virtualenv"
+MAINTAINER="Alan Alberghini"
+EMAIL="414N@slacky.it"
+APPROVED=""

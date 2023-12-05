@@ -1,0 +1,12 @@
+rocBLAS is the ROCm Basic Linear Algebra Subprograms (BLAS) library.
+rocBLAS is implemented in the HIP programming language and optimized for
+AMD GPUs.
+
+NOTE: compilation is really CPU and disk intensive. Consider using a
+different TMP directory if you have less than about 30GB available...
+
+By default this builds for all AMD GPU targets. You can limit the targets
+by overriding the AMDGPU_TARGETS environment variable from the "all"
+default to a list of semicolon-separated targets, i.e.:
+
+AMDGPU_TARGETS="gfx803;gfx900" su -c ./rocprim.SlackBuild

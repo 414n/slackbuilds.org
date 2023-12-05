@@ -1,0 +1,13 @@
+Index: Tensile-rocm-5.5.1/Tensile/Source/lib/CMakeLists.txt
+===================================================================
+--- Tensile-rocm-5.5.1.orig/Tensile/Source/lib/CMakeLists.txt	2023-03-28 17:19:39.000000000 +0200
++++ Tensile-rocm-5.5.1/Tensile/Source/lib/CMakeLists.txt	2023-12-05 01:38:02.476385333 +0100
+@@ -101,7 +101,7 @@
+     target_compile_definitions(TensileHost PUBLIC -DTENSILE_MSGPACK=1)
+ 
+     if(TARGET msgpackc-cxx)
+-        get_target_property(msgpack_inc msgpackc-cxx INTERFACE_INCLUDE_DIRECTORIES)
++        get_target_property(msgpack_inc msgpackc INTERFACE_INCLUDE_DIRECTORIES)
+     elseif(TARGET msgpackc)
+         get_target_property(msgpack_inc msgpackc INTERFACE_INCLUDE_DIRECTORIES)
+     endif()
