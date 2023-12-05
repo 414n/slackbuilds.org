@@ -1,0 +1,5 @@
+AMD ROCm core package (version files).
+
+AMD hasn't released the complete source code of the package, hence this
+package contains onlye the version files that are needed for PyTorch.
+
