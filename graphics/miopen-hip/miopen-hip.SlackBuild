@@ -1,0 +1,132 @@
+#!/bin/sh
+
+# Slackware build script for miopen-hip
+
+# Copyright (c) 2023 Alan Alberghini <414N@slacky.it>
+# All rights reserved.
+#
+#   Permission to use, copy, modify, and distribute this software for
+#   any purpose with or without fee is hereby granted, provided that
+#   the above copyright notice and this permission notice appear in all
+#   copies.
+#
+#   THIS SOFTWARE IS PROVIDED AS IS'' AND ANY EXPRESSED OR IMPLIED
+#   WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+#   MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+#   IN NO EVENT SHALL THE AUTHORS AND COPYRIGHT HOLDERS AND THEIR
+#   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+#   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+#   LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+#   USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+#   ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+#   OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+#   OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+#   SUCH DAMAGE.
+# -----------------------------------------------------------------------------
+#
+# Build history:
+#
+# 1 - Initial release.
+
+PRGNAM=miopen-hip
+VERSION=${VERSION:-5.5.1}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_SBo}
+SRCNAM=MIOpen-rocm
+MLIRSRCNAM=rocMLIR-rocm
+MLIRVER=${MLIRVER:-5.5.0}
+DOCS="README.md CHANGELOG.md LICENSE.txt"
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/SBo}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+ARCH=x86_64
+
+set -e
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+rm -rf $SRCNAM-$VERSION $MLIRSRCNAM-$MLIRVER
+tar xvf $CWD/$SRCNAM-$VERSION.tar.gz
+tar xvf $CWD/$MLIRSRCNAM-$MLIRVER.tar.gz
+cd $MLIRSRCNAM-$MLIRVER
+chown -R root:root .
+find . \
+ \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
+ -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
+ -exec chmod 644 {} \;
+
+mkdir -p build
+cd build
+  # Set ROCm test chipset to Vega (gfx900) in order to pass the configuration step.
+  cmake \
+    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
+    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
+    -DCMAKE_C_COMPILER=/opt/rocm/llvm/bin/clang \
+    -DCMAKE_CXX_COMPILER=/opt/rocm/llvm/bin/clang++ \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DLIB_SUFFIX=${LIBDIRSUFFIX} \
+    -DMAN_INSTALL_DIR=/usr/man \
+    -DMLIR_MIOPEN_SQLITE_ENABLED=ON \
+    -DROCM_TEST_CHIPSET=gfx900 \
+    -DBUILD_FAT_LIBROCKCOMPILER=ON \
+    -DCMAKE_BUILD_TYPE=Release ..
+  cmake --build . --target librockCompiler
+  DESTDIR=$TMP/$SRCNAM-$VERSION/deps cmake --install . --component librockCompiler
+cd ..
+
+cd $TMP/$SRCNAM-$VERSION
+chown -R root:root .
+find . \
+ \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
+ -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
+ -exec chmod 644 {} \;
+
+# Set the target GPU to compile code for. Multiple targets can be
+# specified using semicolons.
+# Default: "gfx803;gfx900;gfx906:xnack-;gfx908:xnack-;gfx90a:xnack+;gfx90a:xnack-;gfx1010;gfx1012;gfx1030;gfx1100;gfx1101;gfx1102"
+AMDGPU_TARGETS=${AMDGPU_TARGETS:-'gfx803;gfx900;gfx906:xnack-;gfx908:xnack-;gfx90a:xnack+;gfx90a:xnack-;gfx1010;gfx1012;gfx1030;gfx1100;gfx1101;gfx1102'}
+
+mkdir -p build
+cd build
+  cmake \
+    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
+    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
+    -DCMAKE_CXX_COMPILER=/opt/rocm/llvm/bin/clang \
+    -DCMAKE_CXX_COMPILER=/opt/rocm/llvm/bin/clang++ \
+    -DHIP_OC_COMPILER=/opt/rocm/bin/clang-ocl \
+    -DMIOPEN_BACKEND=HIP \
+    -DHALF_INCLUDE_DIR=/usr/include/half \
+    -DAMDGPU_TARGETS="$AMDGPU_TARGETS" \
+    -DGPU_TARGETS="$AMDGPU_TARGETS" \
+    -DMIOPEN_HIP_COMPILER=/opt/rocm/llvm/bin/clang++ \
+    -DCMAKE_PREFIX_PATH=$TMP/$SRCNAM-$VERSION/deps/usr/lib/cmake \
+    -DCMAKE_INSTALL_PREFIX=/opt/rocm \
+    -DBoost_USE_STATIC_LIBS=OFF \
+    -DCMAKE_BUILD_TYPE=None ..
+  make
+  make install DESTDIR=$PKG
+cd ..
+
+echo "/opt/rocm/$PRGNAM/lib" > $PRGNAM.conf
+install -Dm644 "$PRGNAM.conf" "$PKG/etc/ld.so.conf.d/$PRGNAM.conf.new"
+
+find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a \
+  $DOCS \
+  $PKG/usr/doc/$PRGNAM-$VERSION
+cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+
+mkdir -p $PKG/install
+cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

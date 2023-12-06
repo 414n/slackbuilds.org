@@ -1,0 +1,11 @@
+AMD's library for high performance machine learning primitives.
+MIOpen supports two programming models
+
+  1. HIP (Primary Support)
+  2. OpenCL
+
+By default this builds for all AMD GPU targets. You can limit the targets
+by overriding the AMDGPU_TARGETS environment variable from the "all"
+default to a list of semicolon-separated targets, i.e.:
+
+AMDGPU_TARGETS="gfx803;gfx900" su -c ./miopen-hip.SlackBuild
