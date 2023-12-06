@@ -1,0 +1,10 @@
+rocFFT is a software library for computing fast Fourier transforms (FFTs)
+written in the HIP programming language. It's part of AMD's software
+ecosystem based on ROCm. The rocFFT library can be used with AMD and
+NVIDIA GPUs.
+
+By default this builds for all AMD GPU targets. You can limit the targets
+by overriding the AMDGPU_TARGETS environment variable from the "all"
+default to a list of semicolon-separated targets, i.e.:
+
+AMDGPU_TARGETS="gfx803;gfx900" su -c ./rocprim.SlackBuild
