@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+                 |-----handy-ruler------------------------------------------------------|
+composable-kernel: composable-kernel
+composable-kernel:
+composable-kernel: ROCm is a brand name for the ROCm open software platform (for 
+composable-kernel: software) or the ROCm open platform ecosystem (includes hardware like
+composable-kernel: FPGAs or other CPU architectures).
+composable-kernel: The Composable Kernel (CK) library provides a programming model for
+composable-kernel: writing performance-critical kernels for machine learning workloads
+composable-kernel: across multiple architectures (GPUs, CPUs, etc.). 
+composable-kernel:
+composable-kernel: Homepage:
+composable-kernel: https://github.com/ROCmSoftwarePlatform/composable_kernel
