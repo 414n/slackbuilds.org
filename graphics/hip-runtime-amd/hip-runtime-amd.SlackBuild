@@ -118,6 +118,13 @@ cd build
   make install DESTDIR=$PKG
 cd ..
 
+# FIXME: for "some" reason (-Wl,--as-needed during the build, probably), the
+# libhiprtc.so library lacks a reference to the libdl.so.2 library and will
+# error out at runtime (rocfft_aot_helper and rocfft_rtc_helper won't like it)
+# We therefore patch it here
+patchelf --add-needed libdl.so.2 $PKG/opt/rocm/hip/lib/libhiprtc.so
+echo "patched libhiprtc.so with forced libdl.so.2 linking"
+
 # Install ld.so.conf override
 echo '/opt/rocm/hip/lib' > "$PRGNAM.conf"
 install -Dm644 "$PRGNAM.conf" "$PKG/etc/ld.so.conf.d/$PRGNAM.conf.new"
@@ -126,7 +133,7 @@ install -Dm644 "$PRGNAM.conf" "$PKG/etc/ld.so.conf.d/$PRGNAM.conf.new"
 sed -i 's#\(.*set(AMDGPU_TARGETS "\)\(gfx900;.*\)#\1gfx803;\2#g' $PKG/opt/rocm/lib/cmake/hip/hip-config.cmake
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
-  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+  | cut -f 1 -d : | xargs strip --strip-unneededi 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
