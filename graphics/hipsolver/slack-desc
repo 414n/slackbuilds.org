@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+         |-----handy-ruler------------------------------------------------------|
+hipsolver: hipsolver: ROCm SOLVER marshalling library
+hipsolver:
+hipsolver: hipSOLVER is a LAPACK marshalling library, with multiple supported
+hipsolver: backends. It sits between the application and a 'worker' LAPACK
+hipsolver: library, marshalling inputs into the backend library and marshalling
+hipsolver: results back to the application. hipSOLVER exports an interface that
+hipsolver: does not require the client to change, regardless of the chosen
+hipsolver: backend. Currently, hipSOLVER supports rocSOLVER and cuSOLVER as
+hipsolver: backends.
+hipsolver: Homepage:
+hipsolver: https://github.com/ROCmSoftwarePlatform/hipSOLVER
