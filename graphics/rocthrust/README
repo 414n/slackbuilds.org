@@ -1,0 +1,9 @@
+Thrust is a parallel algorithm library. It has been ported to HIP and
+ROCm, which use the rocPRIM library. The HIP-ported library works on HIP
+and ROCm software. Currently there is no CUDA backend in place.
+
+By default this builds for all AMD GPU targets. You can limit the targets
+by overriding the AMDGPU_TARGETS environment variable from the "all"
+default to a list of semicolon-separated targets, i.e.:
+
+AMDGPU_TARGETS="gfx803;gfx900" su -c ./rocthrust.SlackBuild
