@@ -1,0 +1,2 @@
+HIPIFY is a set of tools that you can use to automatically translate CUDA
+source code into portable HIP C++.
