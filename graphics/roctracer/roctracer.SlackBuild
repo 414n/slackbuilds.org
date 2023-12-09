@@ -78,6 +78,7 @@ cd build
     -DCMAKE_MODULE_PATH=/opt/rocm/hip/cmake \
     -DCMAKE_PREFIX_PATH=/opt/rocm \
     -DCMAKE_INSTALL_PREFIX=/opt/rocm \
+    -DPython3_FIND_UNVERSIONED_NAMES=FIRST \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_SHARED_LINKER_FLAGS="  -Wl,--enable-new-dtags -Wl,--rpath,/opt/rocm" \
     -DAMDGPU_TARGETS="$AMDGPU_TARGETS" \
