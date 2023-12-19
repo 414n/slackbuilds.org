@@ -1,11 +1,10 @@
 PRGNAM="hipify-clang"
 VERSION="5.5.1"
 HOMEPAGE="https://github.com/ROCm-Developer-Tools/HIPIFY"
-DOWNLOAD="https://github.com/ROCm-Developer-Tools/HIPIFY/archive/refs/tags/rocm-5.5.1/HIPIFY-rocm-5.5.1.tar.gz"
-MD5SUM="59719ea63b5506991f02bf14d735dece"
-DOWNLOAD_x86_64=""
-MD5SUM_x86_64=""
-# TODO: verify if cuda is really not needed
+DOWNLOAD=UNSUPPORTED
+MD5SUM=""
+DOWNLOAD_x86_64="https://github.com/ROCm-Developer-Tools/HIPIFY/archive/refs/tags/rocm-5.5.1/HIPIFY-rocm-5.5.1.tar.gz"
+MD5SUM_x86_64="59719ea63b5506991f02bf14d735dece"
 REQUIRES="rocm-llvm"
 MAINTAINER="Alan Alberghini"
 EMAIL="414N@slacky.it"

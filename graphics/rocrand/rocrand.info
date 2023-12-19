@@ -1,12 +1,12 @@
 PRGNAM="rocrand"
 VERSION="5.5.1"
 HOMEPAGE="https://github.com/ROCmSoftwarePlatform/rocRAND"
-DOWNLOAD="https://github.com/ROCmSoftwarePlatform/rocRAND/archive/refs/tags/rocm-5.5.1/rocRAND-rocm-5.5.1.tar.gz
+DOWNLOAD=UNSUPPORTED
+MD5SUM=""
+DOWNLOAD_x86_64="https://github.com/ROCmSoftwarePlatform/rocRAND/archive/refs/tags/rocm-5.5.1/rocRAND-rocm-5.5.1.tar.gz
 https://github.com/ROCmSoftwarePlatform/hipRAND/archive/refs/tags/rocm-5.5.1/hipRAND-rocm-5.5.1.tar.gz"
-MD5SUM="5333c40aa1008577e83ae2c49c9f78a9
-4b2b7fc224cd59ae2171ad31573f7562" 
-DOWNLOAD_x86_64=""
-MD5SUM_x86_64=""
+MD5SUM_x86_64="5333c40aa1008577e83ae2c49c9f78a9
+4b2b7fc224cd59ae2171ad31573f7562"
 REQUIRES="rocm-cmake hip-runtime-amd"
 MAINTAINER="Alan Alberghini"
 EMAIL="414N@slacky.it"

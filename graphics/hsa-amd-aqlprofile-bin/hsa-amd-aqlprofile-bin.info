@@ -1,7 +1,7 @@
 PRGNAM="hsa-amd-aqlprofile-bin"
 VERSION="5.5.1"
 HOMEPAGE="https://docs.amd.com/"
-DOWNLOAD=""
+DOWNLOAD=UNSUPPORTED
 MD5SUM=""
 DOWNLOAD_x86_64="https://repo.radeon.com/rocm/apt/5.5.1/pool/main/h/hsa-amd-aqlprofile/hsa-amd-aqlprofile_1.0.0.50501-74~20.04_amd64.deb"
 MD5SUM_x86_64="9e4ba0984d6f2a1b27bee902177632ae"

@@ -1,16 +1,16 @@
 PRGNAM="hip-runtime-amd"
 VERSION="5.5.1"
 HOMEPAGE="https://github.com/ROCm-Developer-Tools/HIP"
-DOWNLOAD="https://github.com/ROCm-Developer-Tools/HIP/archive/refs/tags/rocm-5.5.1/HIP-rocm-5.5.1.tar.gz
+DOWNLOAD=UNSUPPORTED
+MD5SUM=""
+DOWNLOAD_x86_64="https://github.com/ROCm-Developer-Tools/HIP/archive/refs/tags/rocm-5.5.1/HIP-rocm-5.5.1.tar.gz
 https://github.com/ROCm-Developer-Tools/hipamd/archive/refs/tags/rocm-5.5.1/hipamd-rocm-5.5.1.tar.gz
 https://github.com/ROCm-Developer-Tools/ROCclr/archive/refs/tags/rocm-5.5.1/ROCclr-rocm-5.5.1.tar.gz
 https://github.com/RadeonOpenCompute/ROCm-OpenCL-Runtime/archive/refs/tags/rocm-5.5.1/ROCm-OpenCL-Runtime-rocm-5.5.1.tar.gz"
-MD5SUM="8a2cf14f52d1ba97e0e37fd640db4bee
+MD5SUM_x86_64="8a2cf14f52d1ba97e0e37fd640db4bee
 5503c0fe3687e0e9652dc587bd83e8d8
 b8cde9aa38855f9b395f6e132372db16
 f7b7510dc2db4174aae17eb79a28f86e"
-DOWNLOAD_x86_64=""
-MD5SUM_x86_64=""
 REQUIRES="rocm-compiler-support rocminfo rocm-llvm"
 MAINTAINER="Alan Alberghini"
 EMAIL="414N@slacky.it"
