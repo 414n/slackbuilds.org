@@ -1,10 +1,12 @@
---- a/build/npm/postinstall.js	2021-09-01 12:25:58.000000000 +0200
-+++ b/build/npm/postinstall.js	2021-09-04 16:32:44.422373821 +0200
-@@ -90,5 +90,5 @@
- 	yarnInstall(watchPath);
+Index: vscode-1.85.1/build/npm/postinstall.js
+===================================================================
+--- vscode-1.85.1.orig/build/npm/postinstall.js	2023-12-13 10:08:58.000000000 +0100
++++ vscode-1.85.1/build/npm/postinstall.js	2024-01-01 22:37:42.330049177 +0100
+@@ -111,5 +111,5 @@
+ 	yarnInstall(dir, opts);
  }
  
 -cp.execSync('git config pull.rebase merges');
--cp.execSync('git config blame.ignoreRevsFile .git-blame-ignore');
+-cp.execSync('git config blame.ignoreRevsFile .git-blame-ignore-revs');
 +//cp.execSync('git config pull.rebase merges');
-+//cp.execSync('git config blame.ignoreRevsFile .git-blame-ignore');
++//cp.execSync('git config blame.ignoreRevsFile .git-blame-ignore-revs');
