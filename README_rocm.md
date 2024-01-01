@@ -7,6 +7,7 @@
  - [ ] normalize treatment of `AMDGPU_TARGETS` variable across all SlackBuilds that use it during the build, translating it accordingly (i.e. `GPU_TARGETS`)
  - [ ] move all rocm packages to a more proper section than graphics/ ?
  - [ ] recompile all as `Release`. [MIOpen disables excessive log output when compiled as release](https://github.com/ROCm/MIOpen/blob/10250d6bcdaef2767d4886b839f639938d15e9e5/docs/DebugAndLogging.md?plain=1#L24)
+ - [ ] check every package with `sbolint`
 
 # Ordered package list
 
