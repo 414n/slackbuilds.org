@@ -1,0 +1,12 @@
+PRGNAM="netavark"
+VERSION="1.10.3"
+HOMEPAGE="https://github.com/containers/netavark"
+DOWNLOAD="https://github.com/containers/netavark/archive/refs/tags/v1.10.3/netavark-1.10.3.tar.gz \
+https://github.com/containers/netavark/releases/download/v1.10.3/netavark-v1.10.3-vendor.tar.gz"
+MD5SUM="c3bb97f4a8f5c20172bfd0205c588149 \
+262f401fe421c7aacb1975a0f3ecc173"
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES="rust16"
+MAINTAINER="Alan Alberghini"
+EMAIL="414N@slacky.it"

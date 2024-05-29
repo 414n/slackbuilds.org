@@ -27,8 +27,8 @@ cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=conmon
 REPONAME=conmon
-VERSION=${VERSION:-2.1.8}
-GIT_COMMIT="00e08f4a9ca5420de733bf542b930ad58e1a7e7d"
+VERSION=${VERSION:-2.1.12}
+GIT_COMMIT="e8896631295ccb0bfdda4284f1751be19b483264"
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -60,6 +60,8 @@ if [ "$ARCH" = "i586" ]; then
 elif [ "$ARCH" = "i686" ]; then
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "x86_64" ]; then
+  LIBDIRSUFFIX="64"
+elif [ "$ARCH" = "aarch64" ]; then
   LIBDIRSUFFIX="64"
 else
   LIBDIRSUFFIX=""
