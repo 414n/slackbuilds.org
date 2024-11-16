@@ -23,8 +23,8 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=vscode
-VERSION=${VERSION:-1.93.1}
-COMMIT=${COMMIT:-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40}
+VERSION=${VERSION:-1.95.3}
+COMMIT=${COMMIT:-f1a4fb101478ce6ec82fe9627c43efbf9e98c813}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -78,11 +78,11 @@ then
 fi
 
 YARN_CACHE_FOLDER=$TMP/yarn-cache \
-       yarn
+       yarn || npm install
 # Need more than 2GB of memory...
 #node --max_old_space_size=8192 ./node_modules/.bin/gulp -LL vscode-linux-${BUILDARCH}
 #npx gulp -LL vscode-linux-${BUILDARCH}
-yarn  gulp vscode-linux-${BUILDARCH}
+yarn  gulp vscode-linux-${BUILDARCH} || npx gulp vscode-linux-${BUILDARCH}
 
 cd $TMP/VSCode-linux-$BUILDARCH
 
